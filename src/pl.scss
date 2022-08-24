@@ -112,11 +112,230 @@
 
 @font-face {
   font-family: fontello;
-  src: url("../public/fonts/consoleicons.eot");
-  src: url("../public/fonts/consoleicons.eot") format("embedded-opentype"), url("../public/fonts/consoleicons.woff2") format("woff2"), url("../public/fonts/consoleicons.woff") format("woff"), url("../public/fonts/consoleicons.ttf") format("truetype"), url("../public/fonts/consoleicons.svg") format("svg");
+  src: url("/public/fonts/consoleicons.eot");
+  src: url("/public/fonts/consoleicons.eot")
+      format("embedded-opentype"),
+    url("/public/fonts/consoleicons.woff2") format("woff2"),
+    url("/public/fonts/consoleicons.woff") format("woff"),
+    url("/public/fonts/consoleicons.ttf") format("truetype"),
+    url("/public/fonts/consoleicons.svg") format("svg");
   font-weight: 400;
   font-style: normal;
 }
+[class*=" icon-"]:before,
+[class^="icon-"]:before {
+  font-family: fontello;
+  font-style: normal;
+  font-weight: 400;
+  speak: never;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-users-outline:before {
+  content: "\e800";
+}
+.icon-params:before {
+  content: "\e801";
+}
+.icon-down-dir:before {
+  content: "\e802";
+}
+.icon-up-dir:before {
+  content: "\e803";
+}
+.icon-clock-1:before {
+  content: "\e804";
+}
+.icon-trash-empty:before {
+  content: "\e805";
+}
+.icon-down-dir-1:before {
+  content: "\e806";
+}
+.icon-up-dir-1:before {
+  content: "\e807";
+}
+.icon-alert-triangle:before {
+  content: "\e808";
+}
+.icon-clock-2:before {
+  content: "\e809";
+}
+.icon-align-center:before {
+  content: "\e80a";
+}
+.icon-ccw:before {
+  content: "\e80b";
+}
+.icon-arrow-down:before {
+  content: "\e80d";
+}
+.icon-arrow-left:before {
+  content: "\e80e";
+}
+.icon-arrow-right:before {
+  content: "\e80f";
+}
+.icon-arrow-up:before {
+  content: "\e812";
+}
+.icon-bell:before {
+  content: "\e81a";
+}
+.icon-book:before {
+  content: "\e81d";
+}
+.icon-bookmark:before {
+  content: "\e81e";
+}
+.icon-box:before {
+  content: "\e81f";
+}
+.icon-briefcase:before {
+  content: "\e820";
+}
+.icon-check:before {
+  content: "\e827";
+}
+.icon-chevrons-down:before {
+  content: "\e82c";
+}
+.icon-circle:before {
+  content: "\e831";
+}
+.icon-clock:before {
+  content: "\e836";
+}
+.icon-command:before {
+  content: "\e83b";
+}
+.icon-compass:before {
+  content: "\e83c";
+}
+.icon-copy:before {
+  content: "\e83d";
+}
+.icon-credit-card:before {
+  content: "\e847";
+}
+.icon-download:before {
+  content: "\e84c";
+}
+.icon-droplet:before {
+  content: "\e84e";
+}
+.icon-edit:before {
+  content: "\e850";
+}
+.icon-external-link:before {
+  content: "\e852";
+}
+.icon-file-text:before {
+  content: "\e85a";
+}
+.icon-grid:before {
+  content: "\e863";
+}
+.icon-help-circle:before {
+  content: "\e867";
+}
+.icon-info:before {
+  content: "\e86b";
+}
+.icon-layers:before {
+  content: "\e86e";
+}
+.icon-life-buoy:before {
+  content: "\e870";
+}
+.icon-link-2:before {
+  content: "\e871";
+}
+.icon-link:before {
+  content: "\e872";
+}
+.icon-exit:before {
+  content: "\e877";
+}
+.icon-menu:before {
+  content: "\e87d";
+}
+.icon-message-square:before {
+  content: "\e87f";
+}
+.icon-minus:before {
+  content: "\e886";
+}
+.icon-paperclip:before {
+  content: "\e891";
+}
+.icon-pie-chart:before {
+  content: "\e89c";
+}
+.icon-plus:before {
+  content: "\e8a1";
+}
+.icon-power:before {
+  content: "\e8a3";
+}
+.icon-search:before {
+  content: "\e8ae";
+}
+.icon-settings:before {
+  content: "\e8b0";
+}
+.icon-sliders:before {
+  content: "\e8bb";
+}
+.icon-trash:before {
+  content: "\e8cc";
+}
+.icon-trending-up:before {
+  content: "\e8cf";
+}
+.icon-upload:before {
+  content: "\e8d8";
+}
+.icon-user:before {
+  content: "\e8dd";
+}
+.icon-times:before {
+  content: "\e8ec";
+}
+.icon-zap:before {
+  content: "\e8ed";
+}
+.icon-chevron-down:before {
+  content: "\e8f0";
+}
+.icon-chevron-left:before {
+  content: "\e8f1";
+}
+.icon-chevron-right:before {
+  content: "\e8f2";
+}
+.icon-chevron-up:before {
+  content: "\e8f3";
+}
+.icon-q:before {
+  content: "\e8f4";
+}
+.icon-ellipsis:before {
+  content: "\e8f7";
+}
+.icon-market-watch:before {
+  content: "\e8f8";
+}
+
 
 
 .full-height, body, html {
@@ -126,10 +345,12 @@
 body{
   margin: 0;
 }
+
 .plPage{
+
+
   
   font-size: 87.5%;
-  
   letter-spacing: 0;
   color: #444;
   line-height: 1.7em;

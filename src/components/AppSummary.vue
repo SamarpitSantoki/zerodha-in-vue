@@ -8,15 +8,29 @@
           <div class="row">
             <div class="four columns">
               <label>Realised P&amp;L</label>
-              <h1 class="pos" data-balloon="₹8,045.92" data-balloon-pos="up">
-                <span class="inherit"> +8.04k </span>
+              <h1
+                :class="
+                  pnlSummary.realisedPL[0] == '+'
+                    ? 'pos'
+                    : pnlSummary.realisedPL[0] == '-'
+                    ? 'neg'
+                    : ''
+                "
+                :data-balloon="'₹' + pnlSummary.realisedPL"
+                data-balloon-pos="up"
+              >
+                <span class="inherit"> {{ pnlSummary.realisedPL }} </span>
               </h1>
             </div>
             <div class="four columns">
               <label>Charges &amp; taxes</label>
               <div class="inline">
-                <h1 class="charges" data-balloon="₹46.91" data-balloon-pos="up">
-                  46.9
+                <h1
+                  class="charges"
+                  :data-balloon="'₹' + pnlSummary.charges"
+                  data-balloon-pos="up"
+                >
+                  {{ pnlSummary.charges }}
                 </h1>
                 <a
                   href="#"
@@ -32,21 +46,46 @@
             <div class="four columns">
               <label>Other credits &amp; debits</label>
               <div class="inline">
-                <h1 data-balloon="₹-111.51" data-balloon-pos="up">-111.5</h1>
+                <h1
+                  :data-balloon="'₹' + pnlSummary.otherCharges"
+                  data-balloon-pos="up"
+                >
+                  {{ pnlSummary.otherCharges }}
+                </h1>
               </div>
             </div>
           </div>
         </div>
         <div class="three columns">
           <label>Net realised P&amp;L</label>
-          <h1 class="pos" data-balloon="₹7,887.50" data-balloon-pos="up">
-            <span class="inherit"> +7.88k </span>
+          <h1
+            :class="
+              pnlSummary.netRealisedPL[0] === '+'
+                ? 'pos'
+                : pnlSummary.netRealisedPL[0] === '-'
+                ? 'neg'
+                : ''
+            "
+            :data-balloon="'₹' + pnlSummary.netRealisedPL"
+            data-balloon-pos="up"
+          >
+            <span class="inherit"> {{ pnlSummary.netRealisedPL }} </span>
           </h1>
         </div>
         <div class="two columns">
           <label>Unrealised P&amp;L</label>
-          <h1 class="neg" data-balloon="-8,434.90" data-balloon-pos="up">
-            <span class="inherit"> -8.44k </span>
+          <h1
+            :class="
+              pnlSummary.unrealisedPL[0] === '+'
+                ? 'pos'
+                : pnlSummary.unrealisedPL[0] === '-'
+                ? 'neg'
+                : ''
+            "
+            :data-balloon="pnlSummary.unrealisedPL"
+            data-balloon-pos="up"
+          >
+            <span class="inherit"> {{ pnlSummary.unrealisedPL }} </span>
           </h1>
         </div>
       </div>
@@ -55,7 +94,14 @@
 </template>
 
 <script>
-export default {};
+import { pnlSummary } from "../../data";
+export default {
+  data() {
+    return {
+      pnlSummary,
+    };
+  },
+};
 </script>
 
 <style></style>

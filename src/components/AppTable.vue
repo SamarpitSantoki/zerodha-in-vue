@@ -1,3 +1,13 @@
+<script>
+import { TableData } from "../../data";
+export default {
+  data() {
+    return {
+      tableData: TableData,
+    };
+  },
+};
+</script>
 <template>
   <div class="section table-section">
     <p class="paginate-info text-light-grey text-small">
@@ -93,9 +103,9 @@
         <tbody>
           <!---->
           <!---->
-          <tr>
+          <tr v-for="position in tableData" :key="position.qty">
             <td class="table-border text-left symbol-class">
-              BANKNIFTY2261634700CE
+              {{ position.symbol }}
               <!---->
               <div class="new-tags">
                 <!---->
@@ -118,8 +128,12 @@
             <td class="table-border">15,116.25</td>
             <td>398.00</td>
             <td class="table-border">19,900.00</td>
-            <td class="pos">
-              +4,783.75
+            <td v-if="parseFloat(position.netRealisedPL) > 0" class="pos">
+              {{ position.netRealisedPL }}
+              <span>+31.65%</span>
+            </td>
+            <td v-if="parseFloat(position.netRealisedPL) < 0" class="neg">
+              {{ position.netRealisedPL }}
               <span>+31.65%</span>
             </td>
             <td class="text-light-grey">–</td>
@@ -170,9 +184,5 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style></style>

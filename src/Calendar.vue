@@ -1,6 +1,6 @@
 <template>
   <div class="mx-datepicker">
-    <date-picker range v-model="value">
+    <date-picker range v-model="value" :lang="lang">
       <template v-slot:header="{ emit }">
         <button class="mx-btn mx-btn-text" @click="emit(new Date())">
           last 7 days
@@ -21,7 +21,9 @@
 import DatePicker from "vue2-datepicker";
 import CalendarRange from "./CalendarRange";
 import en from "vue2-datepicker/locale/en";
+import { state } from "./state";
 import "vue2-datepicker/index.css";
+import { DateTime } from "luxon";
 const defaultLang = {
   days: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
   yearFormat: "YYYY",
@@ -37,8 +39,69 @@ export default {
   },
   data() {
     return {
-      value: null,
+      lang: {
+        // the locale of formatting and parsing function
+        formatLocale: {
+          // MMMM
+          months: [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ],
+          // MMM
+          monthsShort: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+          // dddd
+          weekdays: [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ],
+          // ddd
+          weekdaysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+          // dd
+          weekdaysMin: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+          // first day of week
+          firstDayOfWeek: 0,
+          // first week contains January 1st.
+          firstWeekContainsDate: 1,
+        },
+      },
+      value: state.selectedDate ?? null,
     };
+  },
+  watch: {
+    value(val) {
+      let from = new DateTime(val[0]).toFormat("yyyy-MM-dd");
+      let to = new DateTime(val[1]).toFormat("yyyy-MM-dd");
+      state.changeSelectedDate(val);
+      state.changeDate(from, to);
+    },
   },
 };
 </script>
@@ -287,6 +350,60 @@ export default {
   box-sizing: border-box;
   height: 290px !important;
   width: 250px !important;
+}
+.mx-calendar-header-label {
+  gap: 4px;
+  display: flex;
+  justify-content: center;
+}
+.mx-btn.mx-btn-text.mx-btn-current-month,
+.mx-btn.mx-btn-text.mx-btn-current-year {
+  letter-spacing: 0;
+  font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, sans-serif;
+  font-family: Inter, sans-serif;
+  line-height: 34px;
+  text-align: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-decoration: none;
+  color: #444;
+}
+body
+  > div.mx-datepicker-main.mx-datepicker-popup
+  > div
+  > div.mx-datepicker-body
+  > div
+  > div.first-cal
+  > div.mx-calendar.mx-calendar-panel-date
+  > div.mx-calendar-content
+  > table
+  > thead
+  > tr {
+  letter-spacing: 0;
+  font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, sans-serif;
+  color: #666;
+  font-weight: bold !important;
+  font-family: Inter, sans-serif;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 14px;
+  text-align: right;
+  box-sizing: border-box;
+}
+body
+  > div.mx-datepicker-main.mx-datepicker-popup
+  > div
+  > div.mx-datepicker-body
+  > div
+  > div.first-cal
+  > div.mx-calendar.mx-calendar-panel-date
+  > div.mx-calendar-content
+  > table
+  > thead
+  > tr
+  > th {
+  font-weight: bold;
 }
 .mx-datepicker-header .mx-btn.mx-btn-text:first-child:after {
   content: "|";

@@ -6,6 +6,18 @@ export const state = reactive({
   showSummary: false,
   clickedOnFO: false,
   FOLoading: false,
+  date: null,
+  selectedDate: null,
+  isDummy: true,
+  changeSelectedDate(val) {
+    this.selectedDate = val;
+  },
+  changeDate(from, to) {
+    this.date = {
+      from: from,
+      to: to,
+    };
+  },
   changeTable() {
     this.showTable = !this.showTable;
   },
@@ -14,6 +26,7 @@ export const state = reactive({
   },
   changeFOLoading() {
     this.FOLoading = !this.FOLoading;
+    this.isDummy = false;
   },
   clickOnFO() {
     this.clickedOnFO = !this.clickedOnFO;

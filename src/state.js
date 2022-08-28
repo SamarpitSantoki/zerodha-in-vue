@@ -9,6 +9,7 @@ export const state = reactive({
   date: null,
   selectedDate: null,
   isDummy: true,
+  
   changeSelectedDate(val) {
     this.selectedDate = val;
   },
@@ -30,5 +31,8 @@ export const state = reactive({
   },
   clickOnFO() {
     this.clickedOnFO = !this.clickedOnFO;
+  },
+  changeToggle() {
+    this.showToggle = !this.showToggle
   },
 });

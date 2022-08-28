@@ -16,7 +16,7 @@
             ><span class="portfolio-id">Portfolio</span></a
           >
           <!---->
-          <a href="" class="dropdown-label reports-label router-link-active"
+          <a href="/reports/pnl" class="dropdown-label reports-label router-link-active"
             ><span class="reports-id">Reports</span></a
           >
           <!---->

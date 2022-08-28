@@ -2,7 +2,7 @@
 import { DateTime } from "luxon";
 import { state } from "../state";
 import { reactive } from "vue";
-import Popper from 'vue-popperjs'
+// import Popper from 'vue-popperjs'
 import 'vue-popperjs/dist/vue-popper.css';
 
 const currDate = DateTime.now().toFormat("yyyy-MM-dd");
@@ -14,7 +14,7 @@ const loading = reactive({
 
 export default {
   components: {
-    Popper
+    // Popper
   },
   data() {
     return {
@@ -52,7 +52,7 @@ export default {
 <template>
   <div id="calendar_container" style="background-color: rgb(255, 255, 255)">
     <img id="logo_img" src="/static/images/zerodha-logo.svg" />
-    <Popper
+    <!-- <Popper
     trigger="hover"
     :options="{
       placement: 'top',
@@ -69,7 +69,7 @@ export default {
     <button slot="reference">
       Reference Element
     </button>
-  </Popper>
+  </Popper> -->
     <div id="calendar_year" style="position: relative; display: block">
       <svg
         width="990"

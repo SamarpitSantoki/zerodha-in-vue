@@ -32,3 +32,15 @@ export const TableData = [
     netRealisedPLChange: "-12.27%",
   },
 ];
+
+export const Charges = {
+  brokerage: "220.00",
+  centralGST: '0',
+  SecuritiesTransactionTax: '37.00',
+  ExchangeTransactionCharge: '37.00',
+  StateGST: '0',
+  SEBITurnoverFees: '0.15',
+  ClearingCharges:'0',
+  IntegratedGST:'53.56',
+  StampDuty:'2.00'
+};

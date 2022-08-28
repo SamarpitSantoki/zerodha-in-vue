@@ -38,7 +38,8 @@
                   data-balloon="View breakdown"
                   data-balloon-pos="up"
                   ><img
-                    src="../../public/layers.svg"
+                  @click="toggleState.show()"
+                  src="../../public/layers.svg"
                     class="charges-breakdown-img"
                 /></a>
               </div>
@@ -94,10 +95,12 @@
 </template>
 
 <script>
+  import { toggleState } from "../toggleState";
 import { pnlSummary } from "../../data";
 export default {
   data() {
     return {
+      toggleState,
       pnlSummary,
     };
   },

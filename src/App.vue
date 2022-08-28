@@ -6,6 +6,8 @@ import AppTable from "./components/AppTable.vue";
 import { onMounted, reactive } from "vue";
 import { watch } from "vue";
 import { state } from "./state";
+import { toggleState } from "./toggleState";
+import { Charges } from "../data";
 import "./pl.css";
 const loading = reactive({
   loading: true,
@@ -35,8 +37,6 @@ watch(
 </script>
 <template>
   <div>
-    <title>P&L / Console</title>
-
     <div
       v-if="loading.loading"
       id="init_loader"
@@ -166,6 +166,59 @@ watch(
               v-if="!state.FOLoading && !loading.loading2"
             ></app-summary>
             <app-table v-if="!state.FOLoading && !loading.loading2"></app-table>
+            <div v-if="toggleState.toggle" class="section pnl-charges-breakdown">
+              <div class="modal-mask">
+                <div class="modal-wrapper">
+                  <div class="modal-container">
+                    <div class="modal-body">
+                      <span class="close-modal"
+                      @click="toggleState.show()"
+                        ><img src="close.svg" alt="x"
+                      /></span>
+                      <h1>Charges</h1>
+                      <hr />
+                      <br />
+                      <div class="charges-container">
+                        <label>Brokerage</label>
+                        <p>{{Charges.brokerage}}</p>
+                      </div>
+                      <div class="charges-container">
+                        <label>Exchange Transaction Charges</label>
+                        <p>{{Charges.ExchangeTransactionCharge}}</p>
+                      </div>
+                      <div class="charges-container">
+                        <label>Clearing Charges</label>
+                        <p>{{Charges.ClearingCharges}}</p>
+                      </div>
+                      <div class="charges-container">
+                        <label>Central GST</label>
+                        <p>{{Charges.centralGST}}</p>
+                      </div>
+                      <div class="charges-container">
+                        <label>State GST</label>
+                        <p>{{Charges.StateGST}}</p>
+                      </div>
+                      <div class="charges-container">
+                        <label>Integrated GST</label>
+                        <p>{{Charges.IntegratedGST}}</p>
+                      </div>
+                      <div class="charges-container">
+                        <label>Securities Transaction Tax</label>
+                        <p>{{Charges.SecuritiesTransactionTax}}</p>
+                      </div>
+                      <div class="charges-container">
+                        <label>SEBI Turnover Fees</label>
+                        <p>{{Charges.SEBITurnoverFees}}</p>
+                      </div>
+                      <div class="charges-container">
+                        <label>Stamp Duty</label>
+                        <p>{{Charges.StampDuty}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div v-if="state.FOLoading" class="section text-center">
               <div
                 main="Building your report"

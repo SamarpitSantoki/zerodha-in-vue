@@ -17817,17 +17817,22 @@ rect.day-cell:hover {
   stroke-width: 1px;
 }
 .day-cell-tooltip {
+  letter-spacing: 0;
+  line-height: 1.7em;
+  font-weight: 400;
+  font-family: Inter,sans-serif;
   position: absolute;
   z-index: 9999;
   padding: 5px 9px;
   color: #fff;
   font-size: 12px;
-  background: rgba(0, 0, 0, 0.85);
+  /* background: rgba(0,0,0,.85); */
+  background: red;
   border-radius: 3px;
   text-align: center;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
+  left: 807px;
+  top: 57px;
 }
 .calendar-heatmap {
   box-sizing: initial;

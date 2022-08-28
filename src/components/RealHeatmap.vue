@@ -2,11 +2,20 @@
 import { DateTime } from "luxon";
 import { state } from "../state";
 import { reactive } from "vue";
+import Popper from 'vue-popperjs'
+import 'vue-popperjs/dist/vue-popper.css';
+
 const currDate = DateTime.now().toFormat("yyyy-MM-dd");
 const loading = reactive({
   loading: true,
 });
+
+
+
 export default {
+  components: {
+    Popper
+  },
   data() {
     return {
       loading,
@@ -33,13 +42,34 @@ export default {
         state.changeFOLoading();
       }, 1000);
     },
+    showTooltip(el) {
+  console.log(el);
+  }
   },
-};
+}
 </script>
 
 <template>
   <div id="calendar_container" style="background-color: rgb(255, 255, 255)">
     <img id="logo_img" src="/static/images/zerodha-logo.svg" />
+    <Popper
+    trigger="hover"
+    :options="{
+      placement: 'top',
+      modifiers: { offset: { offset: '0,0px' } }
+    }">
+    <div class=" day-cell-tooltip" style="left: 533px; top: 12px">
+          <span>
+            <strong>Gross realised P&amp;L</strong>
+            on 2022-05-10:
+            <strong>-480</strong>
+          </span>
+        </div>
+
+    <button slot="reference">
+      Reference Element
+    </button>
+  </Popper>
     <div id="calendar_year" style="position: relative; display: block">
       <svg
         width="990"
@@ -48,6 +78,7 @@ export default {
         height="130"
       >
         <rect
+          @mouseover="showTooltip"
           class="day-cell"
           width="13"
           height="13"
@@ -64,7 +95,7 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill="Green1"
+          :fill="Red1"
           date="Thu Sep 02 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="15"
           y="76"
@@ -2462,10 +2493,12 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill="Green1"
+          @mouseover="showTooltip"
+          :fill="Red1"
           date="Fri Apr 08 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="585"
           y="91"
+          title="This is a holiday"
         ></rect>
         <rect
           class="day-cell"
@@ -8028,11 +8061,19 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill="Green1"
+          :fill="Red1"
           date="Sat Jun 11 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="915"
           y="106"
         ></rect>
+
+        <div class="day-cell-tooltip" style="left: 533px; top: 12px">
+          <span>
+            <strong>Gross realised P&amp;L</strong>
+            on 2022-05-10:
+            <strong>-480</strong>
+          </span>
+        </div>
         <rect
           class="day-cell"
           width="13"

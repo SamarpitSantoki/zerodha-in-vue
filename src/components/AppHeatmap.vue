@@ -53,7 +53,7 @@ export default {
           <select>
             <option value="" disabled="disabled">Select segment</option>
             <option value="EQ">Equity</option>
-            <option value="FO">Futures &amp; Options</option>
+            <option value="FO" selected>Futures &amp; Options</option>
             <option value="CDS">Currency</option>
             <option value="COM">Commodity</option>
             <option value="MF">Mutual funds</option>
@@ -155,7 +155,7 @@ export default {
         <!---->
         <DummyHeatmap v-if="state.isDummy" />
         <RealHeatmap v-if="!state.isDummy" />
-        <div v-if="!state.FOLoading" class="heatmap-count">
+        <!-- <div v-if="!state.FOLoading" class="heatmap-count">
           <span
             v-if="!loading.loading"
             class="overview-button"
@@ -212,7 +212,7 @@ export default {
               <span class="dot-spinner"><i></i><i></i><i></i><i></i></span>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

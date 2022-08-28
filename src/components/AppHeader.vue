@@ -32,7 +32,7 @@
               ><div id="avatar-17" class="profile-avatar">
                 <!---->
                 <img
-                  src="https://s3.ap-south-1.amazonaws.com/zerodha-kite-blobs/avatars/4hQAAht2kIsZkhL9fWEsxMGBznOHvzdu.png"
+                  src="4hQAAht2kIsZkhL9fWEsxMGBznOHvzdu.png"
                   height="25"
                   width="25"
                   class="avatar"

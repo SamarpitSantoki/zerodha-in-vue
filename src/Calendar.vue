@@ -92,7 +92,7 @@ export default {
           firstWeekContainsDate: 1,
         },
       },
-      value: state.selectedDate ?? null,
+      value: state.selectedDate ?? [new Date(2022, 3, 1), new Date(2022, 8, 4)],
     };
   },
   watch: {
@@ -107,39 +107,6 @@ export default {
 </script>
 <style>
 .mx-datepicker-popup {
-  -webkit-text-size-adjust: 100%;
-  --litepicker-container-months-color-bg: #fff;
-  --litepicker-container-months-box-shadow-color: #ddd;
-  --litepicker-footer-color-bg: #fafafa;
-  --litepicker-footer-box-shadow-color: #ddd;
-  --litepicker-tooltip-color-bg: #fff;
-  --litepicker-month-header-color: #333;
-  --litepicker-button-prev-month-color: #9e9e9e;
-  --litepicker-button-next-month-color: #9e9e9e;
-  --litepicker-button-prev-month-color-hover: #2196f3;
-  --litepicker-button-next-month-color-hover: #2196f3;
-  --litepicker-month-width: calc(var(--litepicker-day-width) * 7);
-  --litepicker-month-weekday-color: #9e9e9e;
-  --litepicker-month-week-number-color: #9e9e9e;
-  --litepicker-day-color: #333;
-  --litepicker-day-color-hover: #2196f3;
-  --litepicker-is-in-range-color: #bbdefb;
-  --litepicker-is-locked-color: #9e9e9e;
-  --litepicker-is-start-color: #fff;
-  --litepicker-is-end-color: #fff;
-  --litepicker-button-cancel-color: #fff;
-  --litepicker-button-cancel-color-bg: #9e9e9e;
-  --litepicker-button-apply-color: #fff;
-  --litepicker-button-apply-color-bg: #2196f3;
-  --litepicker-button-reset-color: #909090;
-  --litepicker-button-reset-color-hover: #2196f3;
-  --litepicker-highlighted-day-color: #333;
-  --litepicker-highlighted-day-color-bg: #ffeb3b;
-  --litepicker-mobilefriendly-backdrop-color-bg: #000;
-  --litepicker-is-today-color: #0059c1;
-  --litepicker-is-start-color-bg: #0059c1;
-  --litepicker-is-end-color-bg: #0059c1;
-  --litepicker-day-width: 40px;
   letter-spacing: 0;
   font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
     sans-serif;
@@ -159,39 +126,6 @@ export default {
 }
 
 .mx-datepicker-header {
-  -webkit-text-size-adjust: 100%;
-  --litepicker-container-months-color-bg: #fff;
-  --litepicker-container-months-box-shadow-color: #ddd;
-  --litepicker-footer-color-bg: #fafafa;
-  --litepicker-footer-box-shadow-color: #ddd;
-  --litepicker-tooltip-color-bg: #fff;
-  --litepicker-month-header-color: #333;
-  --litepicker-button-prev-month-color: #9e9e9e;
-  --litepicker-button-next-month-color: #9e9e9e;
-  --litepicker-button-prev-month-color-hover: #2196f3;
-  --litepicker-button-next-month-color-hover: #2196f3;
-  --litepicker-month-width: calc(var(--litepicker-day-width) * 7);
-  --litepicker-month-weekday-color: #9e9e9e;
-  --litepicker-month-week-number-color: #9e9e9e;
-  --litepicker-day-color: #333;
-  --litepicker-day-color-hover: #2196f3;
-  --litepicker-is-in-range-color: #bbdefb;
-  --litepicker-is-locked-color: #9e9e9e;
-  --litepicker-is-start-color: #fff;
-  --litepicker-is-end-color: #fff;
-  --litepicker-button-cancel-color: #fff;
-  --litepicker-button-cancel-color-bg: #9e9e9e;
-  --litepicker-button-apply-color: #fff;
-  --litepicker-button-apply-color-bg: #2196f3;
-  --litepicker-button-reset-color: #909090;
-  --litepicker-button-reset-color-hover: #2196f3;
-  --litepicker-highlighted-day-color: #333;
-  --litepicker-highlighted-day-color-bg: #ffeb3b;
-  --litepicker-mobilefriendly-backdrop-color-bg: #000;
-  --litepicker-is-today-color: #0059c1;
-  --litepicker-is-start-color-bg: #0059c1;
-  --litepicker-is-end-color-bg: #0059c1;
-  --litepicker-day-width: 40px;
   letter-spacing: 0;
   font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
     sans-serif;
@@ -204,39 +138,6 @@ export default {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 .mx-datepicker-body {
-  -webkit-text-size-adjust: 100%;
-  --litepicker-container-months-color-bg: #fff;
-  --litepicker-container-months-box-shadow-color: #ddd;
-  --litepicker-footer-color-bg: #fafafa;
-  --litepicker-footer-box-shadow-color: #ddd;
-  --litepicker-tooltip-color-bg: #fff;
-  --litepicker-month-header-color: #333;
-  --litepicker-button-prev-month-color: #9e9e9e;
-  --litepicker-button-next-month-color: #9e9e9e;
-  --litepicker-button-prev-month-color-hover: #2196f3;
-  --litepicker-button-next-month-color-hover: #2196f3;
-  --litepicker-month-width: calc(var(--litepicker-day-width) * 7);
-  --litepicker-month-weekday-color: #9e9e9e;
-  --litepicker-month-week-number-color: #9e9e9e;
-  --litepicker-day-color: #333;
-  --litepicker-day-color-hover: #2196f3;
-  --litepicker-is-in-range-color: #bbdefb;
-  --litepicker-is-locked-color: #9e9e9e;
-  --litepicker-is-start-color: #fff;
-  --litepicker-is-end-color: #fff;
-  --litepicker-button-cancel-color: #fff;
-  --litepicker-button-cancel-color-bg: #9e9e9e;
-  --litepicker-button-apply-color: #fff;
-  --litepicker-button-apply-color-bg: #2196f3;
-  --litepicker-button-reset-color: #909090;
-  --litepicker-button-reset-color-hover: #2196f3;
-  --litepicker-highlighted-day-color: #333;
-  --litepicker-highlighted-day-color-bg: #ffeb3b;
-  --litepicker-mobilefriendly-backdrop-color-bg: #000;
-  --litepicker-is-today-color: #0059c1;
-  --litepicker-is-start-color-bg: #0059c1;
-  --litepicker-is-end-color-bg: #0059c1;
-  --litepicker-day-width: 40px;
   letter-spacing: 0;
   font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
     sans-serif;
@@ -254,39 +155,6 @@ export default {
   overflow: hidden;
 }
 .mx-btn.mx-btn-text {
-  -webkit-text-size-adjust: 100%;
-  --litepicker-container-months-color-bg: #fff;
-  --litepicker-container-months-box-shadow-color: #ddd;
-  --litepicker-footer-color-bg: #fafafa;
-  --litepicker-footer-box-shadow-color: #ddd;
-  --litepicker-tooltip-color-bg: #fff;
-  --litepicker-month-header-color: #333;
-  --litepicker-button-prev-month-color: #9e9e9e;
-  --litepicker-button-next-month-color: #9e9e9e;
-  --litepicker-button-prev-month-color-hover: #2196f3;
-  --litepicker-button-next-month-color-hover: #2196f3;
-  --litepicker-month-width: calc(var(--litepicker-day-width) * 7);
-  --litepicker-month-weekday-color: #9e9e9e;
-  --litepicker-month-week-number-color: #9e9e9e;
-  --litepicker-day-color: #333;
-  --litepicker-day-color-hover: #2196f3;
-  --litepicker-is-in-range-color: #bbdefb;
-  --litepicker-is-locked-color: #9e9e9e;
-  --litepicker-is-start-color: #fff;
-  --litepicker-is-end-color: #fff;
-  --litepicker-button-cancel-color: #fff;
-  --litepicker-button-cancel-color-bg: #9e9e9e;
-  --litepicker-button-apply-color: #fff;
-  --litepicker-button-apply-color-bg: #2196f3;
-  --litepicker-button-reset-color: #909090;
-  --litepicker-button-reset-color-hover: #2196f3;
-  --litepicker-highlighted-day-color: #333;
-  --litepicker-highlighted-day-color-bg: #ffeb3b;
-  --litepicker-mobilefriendly-backdrop-color-bg: #000;
-  --litepicker-is-today-color: #0059c1;
-  --litepicker-is-start-color-bg: #0059c1;
-  --litepicker-is-end-color-bg: #0059c1;
-  --litepicker-day-width: 40px;
   font: inherit;
   overflow: visible;
   text-transform: none;
@@ -310,39 +178,6 @@ export default {
   padding-left: 0;
 }
 .mx-calendar-content {
-  -webkit-text-size-adjust: 100%;
-  --litepicker-container-months-color-bg: #fff;
-  --litepicker-container-months-box-shadow-color: #ddd;
-  --litepicker-footer-color-bg: #fafafa;
-  --litepicker-footer-box-shadow-color: #ddd;
-  --litepicker-tooltip-color-bg: #fff;
-  --litepicker-month-header-color: #333;
-  --litepicker-button-prev-month-color: #9e9e9e;
-  --litepicker-button-next-month-color: #9e9e9e;
-  --litepicker-button-prev-month-color-hover: #2196f3;
-  --litepicker-button-next-month-color-hover: #2196f3;
-  --litepicker-month-width: calc(var(--litepicker-day-width) * 7);
-  --litepicker-month-weekday-color: #9e9e9e;
-  --litepicker-month-week-number-color: #9e9e9e;
-  --litepicker-day-color: #333;
-  --litepicker-day-color-hover: #2196f3;
-  --litepicker-is-in-range-color: #bbdefb;
-  --litepicker-is-locked-color: #9e9e9e;
-  --litepicker-is-start-color: #fff;
-  --litepicker-is-end-color: #fff;
-  --litepicker-button-cancel-color: #fff;
-  --litepicker-button-cancel-color-bg: #9e9e9e;
-  --litepicker-button-apply-color: #fff;
-  --litepicker-button-apply-color-bg: #2196f3;
-  --litepicker-button-reset-color: #909090;
-  --litepicker-button-reset-color-hover: #2196f3;
-  --litepicker-highlighted-day-color: #333;
-  --litepicker-highlighted-day-color-bg: #ffeb3b;
-  --litepicker-mobilefriendly-backdrop-color-bg: #000;
-  --litepicker-is-today-color: #0059c1;
-  --litepicker-is-start-color-bg: #0059c1;
-  --litepicker-is-end-color-bg: #0059c1;
-  --litepicker-day-width: 40px;
   letter-spacing: 0;
   font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, sans-serif;
   color: #444;
@@ -411,39 +246,6 @@ body
   color: #48576a;
 }
 .mx-icon-double-left {
-  -webkit-text-size-adjust: 100%;
-  --litepicker-container-months-color-bg: #fff;
-  --litepicker-container-months-box-shadow-color: #ddd;
-  --litepicker-footer-color-bg: #fafafa;
-  --litepicker-footer-box-shadow-color: #ddd;
-  --litepicker-tooltip-color-bg: #fff;
-  --litepicker-month-header-color: #333;
-  --litepicker-button-prev-month-color: #9e9e9e;
-  --litepicker-button-next-month-color: #9e9e9e;
-  --litepicker-button-prev-month-color-hover: #2196f3;
-  --litepicker-button-next-month-color-hover: #2196f3;
-  --litepicker-month-width: calc(var(--litepicker-day-width) * 7);
-  --litepicker-month-weekday-color: #9e9e9e;
-  --litepicker-month-week-number-color: #9e9e9e;
-  --litepicker-day-color: #333;
-  --litepicker-day-color-hover: #2196f3;
-  --litepicker-is-in-range-color: #bbdefb;
-  --litepicker-is-locked-color: #9e9e9e;
-  --litepicker-is-start-color: #fff;
-  --litepicker-is-end-color: #fff;
-  --litepicker-button-cancel-color: #fff;
-  --litepicker-button-cancel-color-bg: #9e9e9e;
-  --litepicker-button-apply-color: #fff;
-  --litepicker-button-apply-color-bg: #2196f3;
-  --litepicker-button-reset-color: #909090;
-  --litepicker-button-reset-color-hover: #2196f3;
-  --litepicker-highlighted-day-color: #333;
-  --litepicker-highlighted-day-color-bg: #ffeb3b;
-  --litepicker-mobilefriendly-backdrop-color-bg: #000;
-  --litepicker-is-today-color: #0059c1;
-  --litepicker-is-start-color-bg: #0059c1;
-  --litepicker-is-end-color-bg: #0059c1;
-  --litepicker-day-width: 40px;
   letter-spacing: 0;
   font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, sans-serif;
   font-family: Inter, sans-serif;

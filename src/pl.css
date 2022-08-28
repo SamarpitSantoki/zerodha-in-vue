@@ -21495,17 +21495,22 @@ rect.day-cell:hover {
 }
 
 .day-cell-tooltip {
-  position: absolute;
-  z-index: 9999;
-  padding: 5px 9px;
-  color: #fff;
-  font-size: 12px;
-  background: rgba(0, 0, 0, 0.85);
-  border-radius: 3px;
-  text-align: center;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  display: block !important;
+    letter-spacing: 0;
+    line-height: 1.7em;
+    font-weight: 400;
+    font-family: Inter,sans-serif;
+    position: absolute;
+    z-index: 9999;
+    padding: 5px 9px;
+    color: #fff;
+    font-size: 12px;
+    background: rgba(0,0,0,.85);
+    border-radius: 3px;
+    text-align: center;
+    width: max-content;
+    left: 611px;
+    top: 57px;
 }
 
 .calendar-heatmap {

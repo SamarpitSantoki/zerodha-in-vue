@@ -4093,7 +4093,7 @@ export default {
             height="13"
             x="900"
             y="132"
-            :fill="Grey"
+            :fill="Green1"
           ></rect>
           <text
             class="calendar-heatmap-legend-text calendar-heatmap-legend-text-less"

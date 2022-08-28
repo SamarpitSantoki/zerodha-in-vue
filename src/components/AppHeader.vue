@@ -16,7 +16,9 @@
             ><span class="portfolio-id">Portfolio</span></a
           >
           <!---->
-          <a href="/reports/pnl" class="dropdown-label reports-label router-link-active"
+          <a
+            href="/reports/pnl"
+            class="dropdown-label reports-label router-link-active"
             ><span class="reports-id">Reports</span></a
           >
           <!---->
@@ -32,7 +34,7 @@
               ><div id="avatar-17" class="profile-avatar">
                 <!---->
                 <img
-                  src="4hQAAht2kIsZkhL9fWEsxMGBznOHvzdu.png"
+                  src="../../public/4hQAAht2kIsZkhL9fWEsxMGBznOHvzdu.png"
                   height="25"
                   width="25"
                   class="avatar"

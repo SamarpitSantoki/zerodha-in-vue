@@ -153,9 +153,9 @@ export default {
     <div class="heatmap-section">
       <div class="heatmap-container">
         <!---->
-        <DummyHeatmap v-if="state.isDummy " />
-        <RealHeatmap v-if="!state.isDummy " />
-        <!-- <div v-if="!state.FOLoading" class="heatmap-count">
+        <DummyHeatmap v-if="state.isDummy" />
+        <RealHeatmap v-if="!state.isDummy" />
+        <div v-if="!state.FOLoading" class="heatmap-count">
           <span
             v-if="!loading.loading"
             class="overview-button"
@@ -183,17 +183,17 @@ export default {
                 name="heatmap-overview"
                 checked
               />
-              <span v-if="!state.date" id="date_fetched_label"
+              <!-- <span v-if="!state.date" id="date_fetched_label"
                 ><strong>{{ state.date ?? currDate }}</strong></span
-              >
+              > -->
 
-              <span v-if="state.date" id="date_fetched_label"
-                ><strong>{{ state.date.from }}</strong> to
-                <strong>{{ state.date.to }}</strong></span
+              <span id="date_fetched_label"
+                ><strong>2022-04-01</strong> to
+                <strong>2022-09-01</strong></span
               >
             </label></span
           >
-          <p v-if="!loading.loading" class="heatmap-date heatmap-date-label">
+          <!-- <p v-if="!loading.loading" class="heatmap-date heatmap-date-label">
             Gross realised P&amp;L
           </p>
           <p v-if="!loading.loading" class="heatmap-date">2022-03-25</p>
@@ -211,8 +211,8 @@ export default {
             <div class="su-loader">
               <span class="dot-spinner"><i></i><i></i><i></i><i></i></span>
             </div>
-          </div>
-        </div> -->
+          </div> -->
+        </div>
       </div>
     </div>
   </div>

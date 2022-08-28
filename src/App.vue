@@ -15,6 +15,7 @@ const loading = reactive({
   loading3: true,
 });
 onMounted(() => {
+  document.title = "P&L / Console";
   setTimeout(() => {
     loading.loading = false;
   }, 300);
@@ -37,6 +38,9 @@ watch(
 </script>
 <template>
   <div>
+    <head>
+      <title>P&L / Console</title>
+    </head>
     <div
       v-if="loading.loading"
       id="init_loader"
@@ -166,53 +170,55 @@ watch(
               v-if="!state.FOLoading && !loading.loading2"
             ></app-summary>
             <app-table v-if="!state.FOLoading && !loading.loading2"></app-table>
-            <div v-if="toggleState.toggle" class="section pnl-charges-breakdown">
+            <div
+              v-if="toggleState.toggle"
+              class="section pnl-charges-breakdown"
+            >
               <div class="modal-mask">
                 <div class="modal-wrapper">
                   <div class="modal-container">
                     <div class="modal-body">
-                      <span class="close-modal"
-                      @click="toggleState.show()"
-                        ><img src="close.svg" alt="x"
+                      <span class="close-modal" @click="toggleState.show()"
+                        ><img src="../public/close.svg" alt="x"
                       /></span>
                       <h1>Charges</h1>
                       <hr />
                       <br />
                       <div class="charges-container">
                         <label>Brokerage</label>
-                        <p>{{Charges.brokerage}}</p>
+                        <p>{{ Charges.brokerage }}</p>
                       </div>
                       <div class="charges-container">
                         <label>Exchange Transaction Charges</label>
-                        <p>{{Charges.ExchangeTransactionCharge}}</p>
+                        <p>{{ Charges.ExchangeTransactionCharge }}</p>
                       </div>
                       <div class="charges-container">
                         <label>Clearing Charges</label>
-                        <p>{{Charges.ClearingCharges}}</p>
+                        <p>{{ Charges.ClearingCharges }}</p>
                       </div>
                       <div class="charges-container">
                         <label>Central GST</label>
-                        <p>{{Charges.centralGST}}</p>
+                        <p>{{ Charges.centralGST }}</p>
                       </div>
                       <div class="charges-container">
                         <label>State GST</label>
-                        <p>{{Charges.StateGST}}</p>
+                        <p>{{ Charges.StateGST }}</p>
                       </div>
                       <div class="charges-container">
                         <label>Integrated GST</label>
-                        <p>{{Charges.IntegratedGST}}</p>
+                        <p>{{ Charges.IntegratedGST }}</p>
                       </div>
                       <div class="charges-container">
                         <label>Securities Transaction Tax</label>
-                        <p>{{Charges.SecuritiesTransactionTax}}</p>
+                        <p>{{ Charges.SecuritiesTransactionTax }}</p>
                       </div>
                       <div class="charges-container">
                         <label>SEBI Turnover Fees</label>
-                        <p>{{Charges.SEBITurnoverFees}}</p>
+                        <p>{{ Charges.SEBITurnoverFees }}</p>
                       </div>
                       <div class="charges-container">
                         <label>Stamp Duty</label>
-                        <p>{{Charges.StampDuty}}</p>
+                        <p>{{ Charges.StampDuty }}</p>
                       </div>
                     </div>
                   </div>
@@ -227,7 +233,7 @@ watch(
                 class="state-process-container"
               >
                 <div class="state-process">
-                  <img src="/jobber.svg" />
+                  <img src="../public/jobber.svg" />
                   <h3>
                     <span id="mainText">Building your report</span>
                     <div class="su-loader">
@@ -249,7 +255,7 @@ watch(
                 class="state-process-container"
               >
                 <div class="state-process">
-                  <img src="init.svg" />
+                  <img src="../public/init.svg" />
                   <h3 id="mainText">Build a report</h3>
                   <p id="subText">Use the above form to generate a report</p>
                 </div>

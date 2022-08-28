@@ -32,14 +32,15 @@
                 >
                   {{ pnlSummary.charges }}
                 </h1>
+                {{ " " }}
                 <a
                   href="#"
                   class="text-small"
                   data-balloon="View breakdown"
                   data-balloon-pos="up"
                   ><img
-                  @click="toggleState.show()"
-                  src="../../public/layers.svg"
+                    @click="toggleState.show()"
+                    src="../../public/layers.svg"
                     class="charges-breakdown-img"
                 /></a>
               </div>
@@ -95,7 +96,7 @@
 </template>
 
 <script>
-  import { toggleState } from "../toggleState";
+import { toggleState } from "../toggleState";
 import { pnlSummary } from "../../data";
 export default {
   data() {

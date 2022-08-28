@@ -249,7 +249,7 @@ watch(
                 class="state-process-container"
               >
                 <div class="state-process">
-                  <img src="/init.svg" />
+                  <img src="init.svg" />
                   <h3 id="mainText">Build a report</h3>
                   <p id="subText">Use the above form to generate a report</p>
                 </div>

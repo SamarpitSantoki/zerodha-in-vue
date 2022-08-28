@@ -2,13 +2,14 @@
 import { reactive } from "vue";
 
 export const state = reactive({
+  firstLoading: true,
   showTable: false,
   showSummary: false,
   clickedOnFO: false,
   FOLoading: false,
   date: null,
   selectedDate: null,
-  isDummy: true,
+  isDummy: sessionStorage.getItem('isDummy') ? false : true,
   
   changeSelectedDate(val) {
     this.selectedDate = val;
@@ -28,6 +29,7 @@ export const state = reactive({
   changeFOLoading() {
     this.FOLoading = !this.FOLoading;
     this.isDummy = false;
+    sessionStorage.setItem('isDummy','false')
   },
   clickOnFO() {
     this.clickedOnFO = !this.clickedOnFO;

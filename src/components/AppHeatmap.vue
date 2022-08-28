@@ -153,8 +153,8 @@ export default {
     <div class="heatmap-section">
       <div class="heatmap-container">
         <!---->
-        <DummyHeatmap v-if="state.isDummy" />
-        <RealHeatmap v-if="!state.isDummy" />
+        <DummyHeatmap v-if="state.isDummy " />
+        <RealHeatmap v-if="!state.isDummy " />
         <!-- <div v-if="!state.FOLoading" class="heatmap-count">
           <span
             v-if="!loading.loading"

@@ -95,7 +95,7 @@ export default {
       <span v-if="coords.gain">
         <strong>Gross realised P&amp;L</strong>
         on {{ coords.date }}:
-        <strong>-480</strong>
+        <strong>{{coords.gain}}</strong>
       </span>
       <span v-if="coords.gain === null"> No data on {{ coords.date }} </span>
     </div>
@@ -2469,6 +2469,7 @@ export default {
           class="day-cell"
           @mouseover="showTooltip"
           @mouseleave="hideTooltip"
+          data-gain="222"
           width="13"
           height="13"
           cursor="pointer"
@@ -9525,7 +9526,7 @@ export default {
           <span>
             <strong>Gross realised P&amp;L</strong>
             on 2022-05-10:
-            <strong>-480</strong>
+            <strong>{{ coords.gain }}</strong>
           </span>
         </div>
         <rect

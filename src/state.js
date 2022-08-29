@@ -8,7 +8,7 @@ export const state = reactive({
   clickedOnFO: false,
   FOLoading: false,
   date: null,
-  selectedDate: sessionStorage.getItem("selectedDate").split(",") ?? null,
+  selectedDate: sessionStorage.getItem("selectedDate")?.split(",") ?? null,
   isDummy: sessionStorage.getItem("isDummy") ? false : true,
 
   changeSelectedDate(val) {

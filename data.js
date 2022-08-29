@@ -2,11 +2,14 @@ export const pnlSummary = {
   realisedPL: "+5.09k",
   realisedPLTooltip: "+5,215",
 
-  charges: "316.1",
+  charges: "11.06L",
+  chargesTooltip: "11.0212121",
   otherCharges: "0",
+  otherChargesTooltip: "0",
   netRealisedPL: "+4.78k",
   netRealisedPLTooltip: "+4,785",
-  unrealisedPL: 0,
+  unrealisedPL: "+6.01k",
+  unrealisedPLTooltip: "4555",
 };
 
 export const TableData = [

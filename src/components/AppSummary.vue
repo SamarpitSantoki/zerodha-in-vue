@@ -27,7 +27,7 @@
               <div class="inline">
                 <h1
                   class="charges"
-                  :data-balloon="'₹' + pnlSummary.charges"
+                  :data-balloon="'₹' + pnlSummary.chargesTooltip"
                   data-balloon-pos="up"
                 >
                   {{ pnlSummary.charges }}
@@ -49,7 +49,7 @@
               <label>Other credits &amp; debits</label>
               <div class="inline">
                 <h1
-                  :data-balloon="'₹' + pnlSummary.otherCharges"
+                  :data-balloon="pnlSummary.otherChargesTooltip"
                   data-balloon-pos="up"
                 >
                   {{ pnlSummary.otherCharges }}
@@ -84,7 +84,7 @@
                 ? 'neg'
                 : ''
             "
-            :data-balloon="pnlSummary.unrealisedPL"
+            :data-balloon="pnlSummary.unrealisedPLTooltip"
             data-balloon-pos="up"
           >
             <span class="inherit"> {{ pnlSummary.unrealisedPL }} </span>

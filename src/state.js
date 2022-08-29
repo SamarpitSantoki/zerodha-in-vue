@@ -8,11 +8,13 @@ export const state = reactive({
   clickedOnFO: false,
   FOLoading: false,
   date: null,
-  selectedDate: null,
-  isDummy: sessionStorage.getItem('isDummy') ? false : true,
-  
+  selectedDate: sessionStorage.getItem("selectedDate").split(",") ?? null,
+  isDummy: sessionStorage.getItem("isDummy") ? false : true,
+
   changeSelectedDate(val) {
     this.selectedDate = val;
+    console.log("changing date", val);
+    sessionStorage.setItem("selectedDate", val);
   },
   changeDate(from, to) {
     this.date = {
@@ -29,12 +31,12 @@ export const state = reactive({
   changeFOLoading() {
     this.FOLoading = !this.FOLoading;
     this.isDummy = false;
-    sessionStorage.setItem('isDummy','false')
+    sessionStorage.setItem("isDummy", "false");
   },
   clickOnFO() {
     this.clickedOnFO = !this.clickedOnFO;
   },
   changeToggle() {
-    this.showToggle = !this.showToggle
+    this.showToggle = !this.showToggle;
   },
 });

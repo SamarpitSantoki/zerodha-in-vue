@@ -16,7 +16,7 @@
                     ? 'neg'
                     : ''
                 "
-                :data-balloon="'₹' + pnlSummary.realisedPL"
+                :data-balloon="pnlSummary.realisedPLTooltip"
                 data-balloon-pos="up"
               >
                 <span class="inherit"> {{ pnlSummary.realisedPL }} </span>
@@ -68,7 +68,7 @@
                 ? 'neg'
                 : ''
             "
-            :data-balloon="'₹' + pnlSummary.netRealisedPL"
+            :data-balloon="pnlSummary.netRealisedPLTooltip"
             data-balloon-pos="up"
           >
             <span class="inherit"> {{ pnlSummary.netRealisedPL }} </span>

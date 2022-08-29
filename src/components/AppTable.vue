@@ -123,55 +123,18 @@ export default {
                 <!---->
               </div>
             </td>
-            <td class="table-border">50</td>
-            <td>302.32</td>
-            <td class="table-border">15,116.25</td>
-            <td>398.00</td>
-            <td class="table-border">19,900.00</td>
+            <td class="table-border">{{ position.qty }}</td>
+            <td>{{ position.buyAvg }}</td>
+            <td class="table-border">{{ position.buyValue }}</td>
+            <td>{{ position.sellAvg }}</td>
+            <td class="table-border">{{ position.sellValue }}</td>
             <td v-if="parseFloat(position.netRealisedPL) > 0" class="pos">
               {{ position.netRealisedPL }}
-              <span>+31.65%</span>
+              <span>{{ position.netRealisedPLChange }}%</span>
             </td>
             <td v-if="parseFloat(position.netRealisedPL) < 0" class="neg">
               {{ position.netRealisedPL }}
-              <span>+31.65%</span>
-            </td>
-            <td class="text-light-grey">–</td>
-          </tr>
-          <!---->
-          <!---->
-        </tbody>
-        <tbody>
-          <!---->
-          <!---->
-          <tr>
-            <td class="table-border text-left symbol-class">
-              BANKNIFTY2261634700PE
-              <!---->
-              <div class="new-tags">
-                <!---->
-                <!---->
-              </div>
-              <div id="context-menu-50" class="context-menu table">
-                <div class="context-menu-button-wrap">
-                  <span
-                    class="context-menu-button"
-                    data-balloon="Options"
-                    data-balloon-pos="up"
-                    ><span class="icon icon-ellipsis"></span
-                  ></span>
-                </div>
-                <!---->
-              </div>
-            </td>
-            <td class="table-border">75</td>
-            <td>463.90</td>
-            <td class="table-border">34,792.50</td>
-            <td>421.45</td>
-            <td class="table-border">31,608.75</td>
-            <td class="neg">
-              -3,183.75
-              <span>-9.15%</span>
+              <span>{{ position.netRealisedPLChange }}%</span>
             </td>
             <td class="text-light-grey">–</td>
           </tr>

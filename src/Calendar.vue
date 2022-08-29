@@ -38,6 +38,7 @@ export default {
     CalendarRange,
   },
   data() {
+    console.log(state);
     return {
       lang: {
         // the locale of formatting and parsing function
@@ -92,7 +93,9 @@ export default {
           firstWeekContainsDate: 1,
         },
       },
-      value: state.selectedDate ?? [new Date(2022, 3, 1), new Date(2022, 8, 4)],
+      value: state.selectedDate
+        ? [new Date(state.selectedDate[0]), new Date(state.selectedDate[1])]
+        : [new Date(2022, 3, 1), new Date(2022, 8, 4)],
     };
   },
   watch: {

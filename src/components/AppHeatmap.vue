@@ -3,6 +3,7 @@ import { reactive } from "vue";
 import Calendar from "@/Calendar.vue";
 import { state } from "../state";
 import { DateTime } from "luxon";
+
 import DummyHeatmap from "./DummyHeatmap.vue";
 import RealHeatmap from "./RealHeatmap.vue";
 const currDate = DateTime.now().toFormat("yyyy-MM-dd");
@@ -16,6 +17,7 @@ export default {
   components: { Calendar, DummyHeatmap, RealHeatmap },
   data() {
     return {
+      DateTime,
       loading,
       state,
       currDate,
@@ -188,8 +190,17 @@ export default {
               > -->
 
               <span id="date_fetched_label"
-                ><strong>2022-04-01</strong> to
-                <strong>2022-09-01</strong></span
+                ><strong>{{
+                  DateTime.fromJSDate(new Date(state.selectedDate[0])).toFormat(
+                    "yyyy-MM-dd"
+                  )
+                }}</strong>
+                to
+                <strong>{{
+                  DateTime.fromJSDate(new Date(state.selectedDate[1])).toFormat(
+                    "yyyy-MM-dd"
+                  )
+                }}</strong></span
               >
             </label></span
           >

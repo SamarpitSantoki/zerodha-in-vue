@@ -4956,40 +4956,40 @@ export default {
           </text>
         </g>
         <text class="month-name" style="font-size: 10px" x="15" y="10">
-          September
-        </text>
-        <text class="month-name" style="font-size: 10px" x="90" y="10">
           October
         </text>
-        <text class="month-name" style="font-size: 10px" x="180" y="10">
+        <text class="month-name" style="font-size: 10px" x="90" y="10">
           November
         </text>
-        <text class="month-name" style="font-size: 10px" x="255" y="10">
+        <text class="month-name" style="font-size: 10px" x="180" y="10">
           December
         </text>
-        <text class="month-name" style="font-size: 10px" x="330" y="10">
+        <text class="month-name" style="font-size: 10px" x="255" y="10">
           January
         </text>
-        <text class="month-name" style="font-size: 10px" x="420" y="10">
+        <text class="month-name" style="font-size: 10px" x="330" y="10">
           February
         </text>
-        <text class="month-name" style="font-size: 10px" x="495" y="10">
+        <text class="month-name" style="font-size: 10px" x="420" y="10">
           March
         </text>
-        <text class="month-name" style="font-size: 10px" x="570" y="10">
+        <text class="month-name" style="font-size: 10px" x="495" y="10">
           April
         </text>
-        <text class="month-name" style="font-size: 10px" x="660" y="10">
+        <text class="month-name" style="font-size: 10px" x="570" y="10">
           May
         </text>
-        <text class="month-name" style="font-size: 10px" x="735" y="10">
+        <text class="month-name" style="font-size: 10px" x="660" y="10">
           June
         </text>
-        <text class="month-name" style="font-size: 10px" x="810" y="10">
+        <text class="month-name" style="font-size: 10px" x="735" y="10">
           July
         </text>
-        <text class="month-name" style="font-size: 10px" x="900" y="10">
+        <text class="month-name" style="font-size: 10px" x="810" y="10">
           August
+        </text>
+        <text class="month-name" style="font-size: 10px" x="900" y="10">
+          September
         </text>
         <text
           class="day-initial"

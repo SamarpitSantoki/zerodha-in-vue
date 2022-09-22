@@ -95,7 +95,7 @@ export default {
       },
       value: state.selectedDate
         ? [new Date(state.selectedDate[0]), new Date(state.selectedDate[1])]
-        : [new Date(2022, 3, 1), new Date(2022, 9, 22)],
+        : [new Date(2022, 3, 1), new Date(2022, 8, 22)],
     };
   },
   watch: {

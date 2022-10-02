@@ -50,3 +50,14 @@ export const Charges = {
   IntegratedGST:'53.56',
   StampDuty:'2.00'
 };
+
+export const CalendarDates = {
+  startDate: {
+    year: 2021,
+    month: 9
+  },
+  endDate: {
+    year: 2022,
+    month:9
+  }
+}

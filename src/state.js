@@ -10,7 +10,6 @@ export const state = reactive({
   date: null,
   selectedDate: sessionStorage.getItem("selectedDate")?.split(",") ?? null,
   isDummy: sessionStorage.getItem("isDummy") ? false : true,
-
   changeSelectedDate(val) {
     this.selectedDate = val;
     console.log("changing date", val);

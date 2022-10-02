@@ -8,7 +8,12 @@ module.exports = defineConfig({
       key: fs.readFileSync("./key.pem"),
       cert: fs.readFileSync("./cert.pem"),
     },
-    host: "kite.zerodha.com",
+    // host: "kite.zerodha.com",
     port: 443,
   },
+  configureWebpack:{
+    devServer:{
+      liveReload:true
+    }
+  }
 });

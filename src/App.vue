@@ -38,9 +38,6 @@ watch(
 </script>
 <template>
   <div>
-    <head>
-      <title>P&L / Console</title>
-    </head>
     <div
       v-if="loading.loading"
       id="init_loader"

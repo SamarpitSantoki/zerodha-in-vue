@@ -49,11 +49,12 @@ export default {
       }, 1000);
     },
     async showTooltip(el) {
-      console.log(el.target.attributes.date.value);
       coords.date = DateTime.fromJSDate(
         new Date(el.target.attributes.date.value)
       ).toFormat("yyyy-MM-dd");
-      coords.gain = el.target.dataset?.gain ?? null;
+      coords.gain =
+        el.target.dataset?.gain !== "0" ? el.target.dataset?.gain : null;
+
       if (
         parseInt(el.target.attributes.x?.value) + 225 >
         parseInt(el.fromElement.attributes.width?.value)
@@ -65,7 +66,6 @@ export default {
         coords.y = el.target.attributes.y.value - 30;
       }
       coords.showtooltip = true;
-      console.log(el);
     },
     hideTooltip() {
       coords.showtooltip = false;
@@ -119,7 +119,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Dec 01 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="15"
           y="61"
@@ -132,7 +133,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Dec 02 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="15"
           y="76"
@@ -145,7 +147,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Dec 03 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="15"
           y="91"
@@ -158,7 +161,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Dec 04 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="15"
           y="106"
@@ -171,7 +175,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Dec 05 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="30"
           y="16"
@@ -184,7 +189,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Dec 06 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="30"
           y="31"
@@ -197,7 +203,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Dec 07 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="30"
           y="46"
@@ -210,7 +217,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Dec 08 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="30"
           y="61"
@@ -223,7 +231,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Dec 09 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="30"
           y="76"
@@ -236,7 +245,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Dec 10 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="30"
           y="91"
@@ -249,7 +259,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Dec 11 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="30"
           y="106"
@@ -262,7 +273,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Dec 12 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="45"
           y="16"
@@ -275,7 +287,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Dec 13 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="45"
           y="31"
@@ -288,7 +301,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Dec 14 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="45"
           y="46"
@@ -301,7 +315,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Dec 15 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="45"
           y="61"
@@ -314,7 +329,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Dec 16 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="45"
           y="76"
@@ -327,7 +343,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Dec 17 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="45"
           y="91"
@@ -340,7 +357,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Dec 18 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="45"
           y="106"
@@ -353,7 +371,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Dec 19 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="60"
           y="16"
@@ -366,7 +385,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Dec 20 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="60"
           y="31"
@@ -379,7 +399,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Dec 21 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="60"
           y="46"
@@ -392,7 +413,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Dec 22 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="60"
           y="61"
@@ -405,7 +427,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Dec 23 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="60"
           y="76"
@@ -418,7 +441,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Dec 24 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="60"
           y="91"
@@ -431,7 +455,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Dec 25 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="60"
           y="106"
@@ -444,7 +469,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Dec 26 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="75"
           y="16"
@@ -457,7 +483,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Dec 27 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="75"
           y="31"
@@ -470,7 +497,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Dec 28 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="75"
           y="46"
@@ -483,7 +511,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Dec 29 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="75"
           y="61"
@@ -496,7 +525,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Dec 30 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="75"
           y="76"
@@ -509,7 +539,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Dec 31 2021 00:00:00 GMT+0530 (India Standard Time)"
           x="75"
           y="91"
@@ -522,7 +553,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jan 01 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="90"
           y="106"
@@ -535,7 +567,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jan 02 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="105"
           y="16"
@@ -548,7 +581,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Jan 03 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="105"
           y="31"
@@ -561,7 +595,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Jan 04 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="105"
           y="46"
@@ -574,7 +609,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Jan 05 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="105"
           y="61"
@@ -587,7 +623,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Jan 06 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="105"
           y="76"
@@ -600,7 +637,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Jan 07 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="105"
           y="91"
@@ -613,7 +651,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jan 08 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="105"
           y="106"
@@ -626,7 +665,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jan 09 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="120"
           y="16"
@@ -639,7 +679,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Jan 10 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="120"
           y="31"
@@ -652,7 +693,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Jan 11 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="120"
           y="46"
@@ -665,7 +707,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Jan 12 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="120"
           y="61"
@@ -678,7 +721,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Jan 13 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="120"
           y="76"
@@ -691,7 +735,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Jan 14 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="120"
           y="91"
@@ -704,7 +749,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jan 15 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="120"
           y="106"
@@ -717,7 +763,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jan 16 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="135"
           y="16"
@@ -730,7 +777,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Jan 17 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="135"
           y="31"
@@ -743,7 +791,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Jan 18 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="135"
           y="46"
@@ -756,7 +805,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Jan 19 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="135"
           y="61"
@@ -769,7 +819,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Jan 20 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="135"
           y="76"
@@ -782,7 +833,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Jan 21 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="135"
           y="91"
@@ -795,7 +847,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jan 22 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="135"
           y="106"
@@ -808,7 +861,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jan 23 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="150"
           y="16"
@@ -821,7 +875,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Jan 24 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="150"
           y="31"
@@ -834,7 +889,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Jan 25 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="150"
           y="46"
@@ -847,7 +903,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Jan 26 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="150"
           y="61"
@@ -860,7 +917,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Jan 27 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="150"
           y="76"
@@ -873,7 +931,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Jan 28 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="150"
           y="91"
@@ -886,7 +945,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jan 29 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="150"
           y="106"
@@ -899,7 +959,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jan 30 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="165"
           y="16"
@@ -912,7 +973,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Jan 31 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="165"
           y="31"
@@ -925,7 +987,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Feb 01 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="180"
           y="46"
@@ -938,7 +1001,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Feb 02 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="180"
           y="61"
@@ -951,7 +1015,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Feb 03 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="180"
           y="76"
@@ -964,7 +1029,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Feb 04 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="180"
           y="91"
@@ -977,7 +1043,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Feb 05 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="180"
           y="106"
@@ -990,7 +1057,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Feb 06 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="195"
           y="16"
@@ -1003,7 +1071,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Feb 07 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="195"
           y="31"
@@ -1016,7 +1085,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Feb 08 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="195"
           y="46"
@@ -1029,7 +1099,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Feb 09 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="195"
           y="61"
@@ -1042,7 +1113,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Feb 10 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="195"
           y="76"
@@ -1055,7 +1127,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Feb 11 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="195"
           y="91"
@@ -1068,7 +1141,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Feb 12 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="195"
           y="106"
@@ -1081,7 +1155,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Feb 13 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="210"
           y="16"
@@ -1094,7 +1169,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Feb 14 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="210"
           y="31"
@@ -1107,7 +1183,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Feb 15 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="210"
           y="46"
@@ -1120,7 +1197,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Feb 16 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="210"
           y="61"
@@ -1133,7 +1211,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Feb 17 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="210"
           y="76"
@@ -1146,7 +1225,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Feb 18 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="210"
           y="91"
@@ -1159,7 +1239,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Feb 19 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="210"
           y="106"
@@ -1172,7 +1253,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Feb 20 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="225"
           y="16"
@@ -1185,7 +1267,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Feb 21 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="225"
           y="31"
@@ -1198,7 +1281,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Feb 22 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="225"
           y="46"
@@ -1211,7 +1295,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Feb 23 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="225"
           y="61"
@@ -1224,7 +1309,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Feb 24 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="225"
           y="76"
@@ -1237,7 +1323,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Feb 25 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="225"
           y="91"
@@ -1250,7 +1337,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Feb 26 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="225"
           y="106"
@@ -1263,7 +1351,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Feb 27 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="240"
           y="16"
@@ -1276,7 +1365,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Feb 28 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="240"
           y="31"
@@ -1289,7 +1379,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Mar 01 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="255"
           y="46"
@@ -1302,7 +1393,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Mar 02 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="255"
           y="61"
@@ -1315,7 +1407,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Mar 03 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="255"
           y="76"
@@ -1328,7 +1421,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Mar 04 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="255"
           y="91"
@@ -1341,7 +1435,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Mar 05 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="255"
           y="106"
@@ -1354,7 +1449,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Mar 06 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="270"
           y="16"
@@ -1367,7 +1463,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Mar 07 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="270"
           y="31"
@@ -1380,7 +1477,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Mar 08 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="270"
           y="46"
@@ -1393,7 +1491,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Mar 09 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="270"
           y="61"
@@ -1406,7 +1505,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Mar 10 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="270"
           y="76"
@@ -1419,7 +1519,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Mar 11 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="270"
           y="91"
@@ -1432,7 +1533,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Mar 12 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="270"
           y="106"
@@ -1445,7 +1547,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Mar 13 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="285"
           y="16"
@@ -1458,7 +1561,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Mar 14 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="285"
           y="31"
@@ -1471,7 +1575,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Mar 15 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="285"
           y="46"
@@ -1484,7 +1589,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Mar 16 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="285"
           y="61"
@@ -1497,7 +1603,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Mar 17 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="285"
           y="76"
@@ -1510,7 +1617,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Mar 18 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="285"
           y="91"
@@ -1523,7 +1631,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Mar 19 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="285"
           y="106"
@@ -1536,7 +1645,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Mar 20 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="300"
           y="16"
@@ -1549,7 +1659,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Mar 21 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="300"
           y="31"
@@ -1562,7 +1673,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Mar 22 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="300"
           y="46"
@@ -1575,7 +1687,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Mar 23 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="300"
           y="61"
@@ -1588,7 +1701,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Mar 24 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="300"
           y="76"
@@ -1601,7 +1715,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Mar 25 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="300"
           y="91"
@@ -1614,7 +1729,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Mar 26 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="300"
           y="106"
@@ -1627,7 +1743,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Mar 27 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="315"
           y="16"
@@ -1640,7 +1757,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Mar 28 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="315"
           y="31"
@@ -1653,7 +1771,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Mar 29 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="315"
           y="46"
@@ -1666,7 +1785,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Mar 30 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="315"
           y="61"
@@ -1679,7 +1799,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Mar 31 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="315"
           y="76"
@@ -1692,7 +1813,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="94940.00"
+          :fill="Green4"
           date="Fri Apr 01 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="330"
           y="91"
@@ -1705,7 +1827,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Apr 02 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="330"
           y="106"
@@ -1718,7 +1841,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Apr 03 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="345"
           y="16"
@@ -1731,7 +1855,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Apr 04 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="345"
           y="31"
@@ -1744,7 +1869,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="78521.45"
+          :fill="Green4"
           date="Tue Apr 05 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="345"
           y="46"
@@ -1757,7 +1883,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-64612.50"
+          :fill="Red4"
           date="Wed Apr 06 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="345"
           y="61"
@@ -1770,7 +1897,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="112825.00"
+          :fill="Green4"
           date="Thu Apr 07 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="345"
           y="76"
@@ -1783,7 +1911,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-19523.05"
+          :fill="Grey"
           date="Fri Apr 08 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="345"
           y="91"
@@ -1796,7 +1925,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Apr 09 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="345"
           y="106"
@@ -1809,7 +1939,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Apr 10 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="360"
           y="16"
@@ -1822,7 +1953,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="39845.50"
+          :fill="Green4"
           date="Mon Apr 11 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="360"
           y="31"
@@ -1835,7 +1967,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Apr 12 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="360"
           y="46"
@@ -1848,7 +1981,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="49652.85"
+          :fill="Green4"
           date="Wed Apr 13 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="360"
           y="61"
@@ -1861,7 +1995,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Apr 14 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="360"
           y="76"
@@ -1874,7 +2009,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Apr 15 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="360"
           y="91"
@@ -1887,7 +2023,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Apr 16 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="360"
           y="106"
@@ -1900,7 +2037,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Apr 17 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="375"
           y="16"
@@ -1913,7 +2051,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-14523.75"
+          :fill="Red4"
           date="Mon Apr 18 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="375"
           y="31"
@@ -1926,7 +2065,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-19580.55"
+          :fill="Red4"
           date="Tue Apr 19 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="375"
           y="46"
@@ -1939,7 +2079,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Apr 20 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="375"
           y="61"
@@ -1952,7 +2093,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="78523.15"
+          :fill="Green4"
           date="Thu Apr 21 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="375"
           y="76"
@@ -1965,7 +2107,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Apr 22 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="375"
           y="91"
@@ -1978,7 +2121,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Apr 23 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="375"
           y="106"
@@ -1991,7 +2135,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Apr 24 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="390"
           y="16"
@@ -2004,7 +2149,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="42358.50"
+          :fill="Green4"
           date="Mon Apr 25 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="390"
           y="31"
@@ -2017,7 +2163,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="39471.50"
+          :fill="Green4"
           date="Tue Apr 26 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="390"
           y="46"
@@ -2030,7 +2177,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Apr 27 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="390"
           y="61"
@@ -2043,7 +2191,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="21458.50"
+          :fill="Green4"
           date="Thu Apr 28 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="390"
           y="76"
@@ -2056,7 +2205,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="86325.85"
+          :fill="Green4"
           date="Fri Apr 29 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="390"
           y="91"
@@ -2069,7 +2219,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Apr 30 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="390"
           y="106"
@@ -2082,7 +2233,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun May 01 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="420"
           y="16"
@@ -2095,7 +2247,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon May 02 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="420"
           y="31"
@@ -2108,7 +2261,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue May 03 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="420"
           y="46"
@@ -2121,7 +2275,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="102586.50"
+          :fill="Green4"
           date="Wed May 04 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="420"
           y="61"
@@ -2134,7 +2289,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="110258.65"
+          :fill="Green4"
           date="Thu May 05 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="420"
           y="76"
@@ -2147,7 +2303,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri May 06 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="420"
           y="91"
@@ -2160,7 +2317,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat May 07 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="420"
           y="106"
@@ -2173,7 +2331,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun May 08 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="435"
           y="16"
@@ -2186,7 +2345,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="96325.85"
+          :fill="Green4"
           date="Mon May 09 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="435"
           y="31"
@@ -2199,7 +2359,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue May 10 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="435"
           y="46"
@@ -2212,7 +2373,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-39850.15"
+          :fill="Red4"
           date="Wed May 11 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="435"
           y="61"
@@ -2225,7 +2387,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu May 12 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="435"
           y="76"
@@ -2238,7 +2401,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="99541.20"
+          :fill="Green4"
           date="Fri May 13 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="435"
           y="91"
@@ -2251,7 +2415,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat May 14 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="435"
           y="106"
@@ -2264,7 +2429,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun May 15 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="450"
           y="16"
@@ -2277,7 +2443,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="112456.95"
+          :fill="Green4"
           date="Mon May 16 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="450"
           y="31"
@@ -2290,7 +2457,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-75238.90"
+          :fill="Red4"
           date="Tue May 17 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="450"
           y="46"
@@ -2303,7 +2471,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="106956.15"
+          :fill="Green4"
           date="Wed May 18 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="450"
           y="61"
@@ -2316,7 +2485,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu May 19 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="450"
           y="76"
@@ -2329,7 +2499,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="93372.50"
+          :fill="Green4"
           date="Fri May 20 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="450"
           y="91"
@@ -2342,7 +2513,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat May 21 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="450"
           y="106"
@@ -2355,7 +2527,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun May 22 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="465"
           y="16"
@@ -2368,7 +2541,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-52147.50"
+          :fill="Red4"
           date="Mon May 23 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="465"
           y="31"
@@ -2381,7 +2555,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          :fill="Red4"
+          data-gain="-49523.65"
           date="Tue May 24 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="465"
           y="46"
@@ -2394,7 +2569,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          :fill="Green4"
+          data-gain="105246.65"
           date="Wed May 25 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="465"
           y="61"
@@ -2407,7 +2583,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="129854.25"
+          :fill="Green4"
           date="Thu May 26 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="465"
           y="76"
@@ -2420,7 +2597,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-76528.50"
+          :fill="Red4"
           date="Fri May 27 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="465"
           y="91"
@@ -2433,7 +2611,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat May 28 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="465"
           y="106"
@@ -2446,7 +2625,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun May 29 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="480"
           y="16"
@@ -2459,7 +2639,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="56528.55"
+          :fill="Green4"
           date="Mon May 30 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="480"
           y="31"
@@ -2472,7 +2653,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="94562.90"
+          :fill="Green4"
           date="Tue May 31 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="480"
           y="46"
@@ -2485,7 +2667,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="71258.15"
+          :fill="Green4"
           date="Wed Jun 01 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="495"
           y="61"
@@ -2498,7 +2681,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-47586.30"
+          :fill="Red4"
           date="Thu Jun 02 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="495"
           y="76"
@@ -2511,7 +2695,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="70863.75"
+          :fill="Green4"
           date="Fri Jun 03 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="495"
           y="91"
@@ -2524,7 +2709,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jun 04 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="495"
           y="106"
@@ -2537,7 +2723,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jun 05 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="510"
           y="16"
@@ -2550,7 +2737,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="89563.20"
+          :fill="Green4"
           date="Mon Jun 06 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="510"
           y="31"
@@ -2563,7 +2751,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="81547.20"
+          :fill="Green4"
           date="Tue Jun 07 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="510"
           y="46"
@@ -2576,7 +2765,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-58745.30"
+          :fill="Red4"
           date="Wed Jun 08 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="510"
           y="61"
@@ -2589,7 +2779,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-41563.25"
+          :fill="Red4"
           date="Thu Jun 09 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="510"
           y="76"
@@ -2602,7 +2793,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="97452.80"
+          :fill="Green4"
           date="Fri Jun 10 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="510"
           y="91"
@@ -2615,7 +2807,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jun 11 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="510"
           y="106"
@@ -2628,7 +2821,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jun 12 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="525"
           y="16"
@@ -2641,7 +2835,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="45630.20"
+          :fill="Green4"
           date="Mon Jun 13 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="525"
           y="31"
@@ -2654,7 +2849,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="58800.00"
+          :fill="Green4"
           date="Tue Jun 14 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="525"
           y="46"
@@ -2667,7 +2863,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="65214.90"
+          :fill="Green4"
           date="Wed Jun 15 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="525"
           y="61"
@@ -2680,7 +2877,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="57412.20"
+          :fill="Green4"
           date="Thu Jun 16 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="525"
           y="76"
@@ -2693,7 +2891,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-47852.95"
+          :fill="Red4"
           date="Fri Jun 17 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="525"
           y="91"
@@ -2706,7 +2905,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jun 18 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="525"
           y="106"
@@ -2719,7 +2919,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jun 19 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="540"
           y="16"
@@ -2732,7 +2933,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="89564.50"
+          :fill="Green4"
           date="Mon Jun 20 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="540"
           y="31"
@@ -2745,7 +2947,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="70258.35"
+          :fill="Green4"
           date="Tue Jun 21 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="540"
           y="46"
@@ -2758,7 +2961,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-55478.50"
+          :fill="Red4"
           date="Wed Jun 22 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="540"
           y="61"
@@ -2771,7 +2975,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="65852.10"
+          :fill="Green4"
           date="Thu Jun 23 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="540"
           y="76"
@@ -2784,7 +2989,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="73377.50"
+          :fill="Green4"
           date="Fri Jun 24 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="540"
           y="91"
@@ -2797,7 +3003,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jun 25 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="540"
           y="106"
@@ -2810,7 +3017,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jun 26 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="555"
           y="16"
@@ -2823,7 +3031,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-48052.50"
+          :fill="Red4"
           date="Mon Jun 27 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="555"
           y="31"
@@ -2836,7 +3045,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-56085.15"
+          :fill="Red4"
           date="Tue Jun 28 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="555"
           y="46"
@@ -2849,7 +3059,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="49050.90"
+          :fill="Green4"
           date="Wed Jun 29 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="555"
           y="61"
@@ -2862,7 +3073,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="72584.20"
+          :fill="Green4"
           date="Thu Jun 30 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="555"
           y="76"
@@ -2875,7 +3087,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="32058.95"
+          :fill="Green4"
           date="Fri Jul 01 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="570"
           y="91"
@@ -2888,7 +3101,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jul 02 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="570"
           y="106"
@@ -2901,7 +3115,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jul 03 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="585"
           y="16"
@@ -2914,7 +3129,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="66687.50"
+          :fill="Green4"
           date="Mon Jul 04 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="585"
           y="31"
@@ -2927,7 +3143,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-45632.50"
+          :fill="Red4"
           date="Tue Jul 05 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="585"
           y="46"
@@ -2940,7 +3157,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-55780.15"
+          :fill="Red4"
           date="Wed Jul 06 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="585"
           y="61"
@@ -2953,7 +3171,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="78210.45"
+          :fill="Green4"
           date="Thu Jul 07 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="585"
           y="76"
@@ -2966,8 +3185,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          data-gain="-300"
-          :fill="Green1"
+          data-gain="98045.50"
+          :fill="Green4"
           date="Fri Jul 08 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="585"
           y="91"
@@ -2980,7 +3199,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jul 09 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="585"
           y="106"
@@ -2993,7 +3213,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jul 10 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="600"
           y="16"
@@ -3006,7 +3227,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="83517.80"
+          :fill="Green4"
           date="Mon Jul 11 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="600"
           y="31"
@@ -3019,7 +3241,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="65125.15"
+          :fill="Green4"
           date="Tue Jul 12 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="600"
           y="46"
@@ -3032,7 +3255,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="38541.50"
+          :fill="Green4"
           date="Wed Jul 13 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="600"
           y="61"
@@ -3045,7 +3269,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="101523.85"
+          :fill="Green4"
           date="Thu Jul 14 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="600"
           y="76"
@@ -3058,7 +3283,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Jul 15 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="600"
           y="91"
@@ -3071,7 +3297,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jul 16 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="600"
           y="106"
@@ -3084,7 +3311,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jul 17 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="615"
           y="16"
@@ -3097,7 +3325,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="105259.75"
+          :fill="Green4"
           date="Mon Jul 18 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="615"
           y="31"
@@ -3110,7 +3339,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="84128.95"
+          :fill="Green4"
           date="Tue Jul 19 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="615"
           y="46"
@@ -3123,7 +3353,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-42581.10"
+          :fill="Red4"
           date="Wed Jul 20 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="615"
           y="61"
@@ -3136,7 +3367,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="98574.50"
+          :fill="Green4"
           date="Thu Jul 21 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="615"
           y="76"
@@ -3149,7 +3381,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="140589.60"
+          :fill="Green4"
           date="Fri Jul 22 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="615"
           y="91"
@@ -3162,7 +3395,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jul 23 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="615"
           y="106"
@@ -3175,7 +3409,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jul 24 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="630"
           y="16"
@@ -3188,7 +3423,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="127520.90"
+          :fill="Green4"
           date="Mon Jul 25 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="630"
           y="31"
@@ -3201,7 +3437,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-110578.05"
+          :fill="Red4"
           date="Tue Jul 26 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="630"
           y="46"
@@ -3214,7 +3451,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="96014.95"
+          :fill="Green4"
           date="Wed Jul 27 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="630"
           y="61"
@@ -3227,7 +3465,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="154856.30"
+          :fill="Green4"
           date="Thu Jul 28 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="630"
           y="76"
@@ -3240,7 +3479,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-18543.10"
+          :fill="Red4"
           date="Fri Jul 29 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="630"
           y="91"
@@ -3253,7 +3493,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Jul 30 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="630"
           y="106"
@@ -3266,7 +3507,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Jul 31 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="645"
           y="16"
@@ -3279,7 +3521,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="126985.65"
+          :fill="Green4"
           date="Mon Aug 01 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="660"
           y="31"
@@ -3292,7 +3535,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-102546.50"
+          :fill="Red4"
           date="Tue Aug 02 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="660"
           y="46"
@@ -3305,7 +3549,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="65290.00"
+          :fill="Green4"
           date="Wed Aug 03 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="660"
           y="61"
@@ -3318,7 +3563,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="125098.40"
+          :fill="Green4"
           date="Thu Aug 04 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="660"
           y="76"
@@ -3331,7 +3577,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Aug 05 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="660"
           y="91"
@@ -3344,7 +3591,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Aug 06 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="660"
           y="106"
@@ -3357,7 +3605,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Aug 07 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="675"
           y="16"
@@ -3370,7 +3619,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="135091.20"
+          :fill="Green4"
           date="Mon Aug 08 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="675"
           y="31"
@@ -3383,7 +3633,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Aug 09 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="675"
           y="46"
@@ -3396,7 +3647,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-67058.10"
+          :fill="Red4"
           date="Wed Aug 10 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="675"
           y="61"
@@ -3409,7 +3661,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-55863.50"
+          :fill="Red4"
           date="Thu Aug 11 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="675"
           y="76"
@@ -3422,7 +3675,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="104788.50"
+          :fill="Green4"
           date="Fri Aug 12 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="675"
           y="91"
@@ -3435,7 +3689,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Aug 13 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="675"
           y="106"
@@ -3448,7 +3703,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Aug 14 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="690"
           y="16"
@@ -3461,7 +3717,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Aug 15 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="690"
           y="31"
@@ -3474,7 +3731,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="260310.60"
+          :fill="Green3"
           date="Tue Aug 16 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="690"
           y="46"
@@ -3487,7 +3745,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="226804.70"
+          :fill="Green3"
           date="Wed Aug 17 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="690"
           y="61"
@@ -3500,7 +3759,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="334093.35"
+          :fill="Green3"
           date="Thu Aug 18 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="690"
           y="76"
@@ -3513,7 +3773,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="109161.75"
+          :fill="Green1"
           date="Fri Aug 19 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="690"
           y="91"
@@ -3526,7 +3787,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Aug 20 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="690"
           y="106"
@@ -3539,7 +3801,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Aug 21 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="705"
           y="16"
@@ -3552,7 +3815,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="208920.85"
+          :fill="Green3"
           date="Mon Aug 22 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="705"
           y="31"
@@ -3565,7 +3829,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="307162.25"
+          :fill="Green3"
           date="Tue Aug 23 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="705"
           y="46"
@@ -3578,7 +3843,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-76920.35"
+          :fill="Red4"
           date="Wed Aug 24 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="705"
           y="61"
@@ -3591,7 +3857,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="345084.60"
+          :fill="Green3"
           date="Thu Aug 25 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="705"
           y="76"
@@ -3604,7 +3871,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="32886.65"
+          :fill="Green4"
           date="Fri Aug 26 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="705"
           y="91"
@@ -3617,7 +3885,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Aug 27 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="705"
           y="106"
@@ -3630,7 +3899,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Aug 28 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="720"
           y="16"
@@ -3643,7 +3913,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Aug 29 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="720"
           y="31"
@@ -3656,7 +3927,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="522904.85"
+          :fill="Green2"
           date="Tue Aug 30 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="720"
           y="46"
@@ -3669,7 +3941,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Aug 31 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="720"
           y="61"
@@ -3682,7 +3955,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="133852.85"
+          :fill="Green4"
           date="Thu Sep 01 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="735"
           y="76"
@@ -3695,7 +3969,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Sep 02 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="735"
           y="91"
@@ -3708,7 +3983,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Sep 03 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="735"
           y="106"
@@ -3721,7 +3997,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Sep 04 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="750"
           y="16"
@@ -3734,7 +4011,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="338692.20"
+          :fill="Green3"
           date="Mon Sep 05 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="750"
           y="31"
@@ -3747,7 +4025,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-106809.60"
+          :fill="Red4"
           date="Tue Sep 06 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="750"
           y="46"
@@ -3760,7 +4039,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="636307.30"
+          :fill="Green1"
           date="Wed Sep 07 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="750"
           y="61"
@@ -3773,7 +4053,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="236636.05"
+          :fill="Green3"
           date="Thu Sep 08 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="750"
           y="76"
@@ -3786,7 +4067,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="78422.45"
+          :fill="Green4"
           date="Fri Sep 09 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="750"
           y="91"
@@ -3799,7 +4081,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Sep 10 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="750"
           y="106"
@@ -3812,7 +4095,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Sep 11 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="765"
           y="16"
@@ -3825,7 +4109,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="327320.50"
+          :fill="Green3"
           date="Mon Sep 12 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="765"
           y="31"
@@ -3838,7 +4123,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-51940.85"
+          :fill="Red4"
           date="Tue Sep 13 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="765"
           y="46"
@@ -3851,7 +4137,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="351673.20"
+          :fill="Green3"
           date="Wed Sep 14 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="765"
           y="61"
@@ -3864,7 +4151,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="287028.15"
+          :fill="Green3"
           date="Thu Sep 15 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="765"
           y="76"
@@ -3877,7 +4165,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Sep 16 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="765"
           y="91"
@@ -3890,7 +4179,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Sep 17 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="765"
           y="106"
@@ -3903,7 +4193,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Sep 18 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="780"
           y="16"
@@ -3916,7 +4207,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="279990.30"
+          :fill="Green3"
           date="Mon Sep 19 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="780"
           y="31"
@@ -3929,7 +4221,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="181060.00"
+          :fill="Green4"
           date="Tue Sep 20 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="780"
           y="46"
@@ -3942,7 +4235,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-79553.30"
+          :fill="Red4"
           date="Wed Sep 21 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="780"
           y="61"
@@ -3955,7 +4249,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="573449.20"
+          :fill="Green2"
           date="Thu Sep 22 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="780"
           y="76"
@@ -3968,7 +4263,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="142036.65"
+          :fill="Green4"
           date="Fri Sep 23 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="780"
           y="91"
@@ -3981,7 +4277,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Sep 24 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="780"
           y="106"
@@ -3994,7 +4291,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Sep 25 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="795"
           y="16"
@@ -4007,7 +4305,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill="Green4"
+          data-gain="-102802.15"
+          :fill="Red4"
           date="Mon Sep 26 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="795"
           y="31"
@@ -4020,7 +4319,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="305763.15"
+          :fill="Green3"
           date="Tue Sep 27 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="795"
           y="46"
@@ -4033,7 +4333,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="301191.15"
+          :fill="Green3"
           date="Wed Sep 28 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="795"
           y="61"
@@ -4046,7 +4347,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="158712.55"
+          :fill="Green3"
           date="Thu Sep 29 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="795"
           y="76"
@@ -4059,7 +4361,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Sep 30 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="795"
           y="91"
@@ -4072,7 +4375,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Oct 01 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="810"
           y="106"
@@ -4085,7 +4389,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Oct 02 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="825"
           y="16"
@@ -4098,7 +4403,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="277205.45"
+          :fill="Green3"
           date="Mon Oct 03 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="825"
           y="31"
@@ -4111,7 +4417,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="712143.55"
+          :fill="Green1"
           date="Tue Oct 04 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="825"
           y="46"
@@ -4124,7 +4431,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Oct 05 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="825"
           y="61"
@@ -4137,7 +4445,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="158162.70"
+          :fill="Green4"
           date="Thu Oct 06 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="825"
           y="76"
@@ -4150,7 +4459,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="223526.45"
+          :fill="Green3"
           date="Fri Oct 07 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="825"
           y="91"
@@ -4163,7 +4473,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Oct 08 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="825"
           y="106"
@@ -4176,7 +4487,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Oct 09 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="840"
           y="16"
@@ -4189,7 +4501,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-153851.45"
+          :fill="Red4"
           date="Mon Oct 10 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="840"
           y="31"
@@ -4202,7 +4515,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="293149.60"
+          :fill="Green3"
           date="Tue Oct 11 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="840"
           y="46"
@@ -4215,7 +4529,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="127356.40"
+          :fill="Green4"
           date="Wed Oct 12 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="840"
           y="61"
@@ -4228,7 +4543,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="129066.05"
+          :fill="Green4"
           date="Thu Oct 13 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="840"
           y="76"
@@ -4241,7 +4557,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Oct 14 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="840"
           y="91"
@@ -4254,7 +4571,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Oct 15 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="840"
           y="106"
@@ -4267,7 +4585,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Oct 16 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="855"
           y="16"
@@ -4280,7 +4599,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="204652.80"
+          :fill="Green3"
           date="Mon Oct 17 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="855"
           y="31"
@@ -4293,7 +4613,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="89181.20"
+          :fill="Green4"
           date="Tue Oct 18 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="855"
           y="46"
@@ -4306,7 +4627,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="541865.45"
+          :fill="Green2"
           date="Wed Oct 19 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="855"
           y="61"
@@ -4319,7 +4641,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="115162.00"
+          :fill="Green4"
           date="Thu Oct 20 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="855"
           y="76"
@@ -4332,7 +4655,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="29107.50"
+          :fill="Green4"
           date="Fri Oct 21 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="855"
           y="91"
@@ -4345,7 +4669,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Oct 22 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="855"
           y="106"
@@ -4358,7 +4683,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Oct 23 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="870"
           y="16"
@@ -4371,7 +4697,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill="Red1"
+          data-gain="-4160.00"
+          :fill="Red4"
           date="Mon Oct 24 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="870"
           y="31"
@@ -4384,7 +4711,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="127449.50"
+          :fill="Green4"
           date="Tue Oct 25 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="870"
           y="46"
@@ -4397,7 +4725,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Oct 26 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="870"
           y="61"
@@ -4410,7 +4739,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="171158.50"
+          :fill="Green4"
           date="Thu Oct 27 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="870"
           y="76"
@@ -4423,7 +4753,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="845776.45"
+          :fill="Green1"
           date="Fri Oct 28 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="870"
           y="91"
@@ -4436,7 +4767,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Oct 29 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="870"
           y="106"
@@ -4449,7 +4781,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Oct 30 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="885"
           y="16"
@@ -4462,7 +4795,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-4396.70"
+          :fill="Red4"
           date="Mon Oct 31 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="885"
           y="31"
@@ -4475,7 +4809,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="89449.05"
+          :fill="Green4"
           date="Tue Nov 01 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="900"
           y="46"
@@ -4488,7 +4823,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="205446.80"
+          :fill="Green3"
           date="Wed Nov 02 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="900"
           y="61"
@@ -4501,7 +4837,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="262530.50"
+          :fill="Green3"
           date="Thu Nov 03 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="900"
           y="76"
@@ -4514,7 +4851,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="61933.45"
+          :fill="Green4"
           date="Fri Nov 04 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="900"
           y="91"
@@ -4527,7 +4865,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Nov 05 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="900"
           y="106"
@@ -4540,7 +4879,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Nov 06 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="915"
           y="16"
@@ -4553,7 +4893,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="-40166.95"
+          :fill="Red4"
           date="Mon Nov 07 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="915"
           y="31"
@@ -4566,7 +4907,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Nov 08 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="915"
           y="46"
@@ -4579,7 +4921,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="124457.35"
+          :fill="Green4"
           date="Wed Nov 09 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="915"
           y="61"
@@ -4592,7 +4935,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="135781.05"
+          :fill="Green4"
           date="Thu Nov 10 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="915"
           y="76"
@@ -4605,7 +4949,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Nov 11 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="915"
           y="91"
@@ -4618,7 +4963,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Nov 12 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="915"
           y="106"
@@ -4631,7 +4977,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Nov 13 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="930"
           y="16"
@@ -4644,7 +4991,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="380368.15"
+          :fill="Green3"
           date="Mon Nov 14 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="930"
           y="31"
@@ -4657,7 +5005,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Nov 15 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="930"
           y="46"
@@ -4670,7 +5019,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Nov 16 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="930"
           y="61"
@@ -4683,7 +5033,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Nov 17 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="930"
           y="76"
@@ -4696,7 +5047,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Nov 18 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="930"
           y="91"
@@ -4709,7 +5061,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Nov 19 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="930"
           y="106"
@@ -4722,7 +5075,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Nov 20 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="945"
           y="16"
@@ -4735,7 +5089,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Nov 21 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="945"
           y="31"
@@ -4748,7 +5103,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Nov 22 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="945"
           y="46"
@@ -4761,7 +5117,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Nov 23 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="945"
           y="61"
@@ -4774,7 +5131,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Thu Nov 24 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="945"
           y="76"
@@ -4787,7 +5145,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Fri Nov 25 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="945"
           y="91"
@@ -4800,7 +5159,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sat Nov 26 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="945"
           y="106"
@@ -4813,7 +5173,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Sun Nov 27 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="960"
           y="16"
@@ -4826,7 +5187,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Mon Nov 28 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="960"
           y="31"
@@ -4839,7 +5201,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Tue Nov 29 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="960"
           y="46"
@@ -4852,7 +5215,8 @@ export default {
           height="13"
           cursor="pointer"
           border-radius="2px"
-          :fill='Grey'
+          data-gain="0"
+          :fill="Grey"
           date="Wed Nov 30 2022 00:00:00 GMT+0530 (India Standard Time)"
           x="960"
           y="61"
@@ -5014,7 +5378,7 @@ export default {
           F
         </text>
       </svg>
-      </div>
+    </div>
 
     <!---->
     <!---->
